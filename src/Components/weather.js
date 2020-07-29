@@ -27,10 +27,10 @@ export default class Weather extends React.Component {
             console.error("error" + error.message);
         });
     }
-  
+
     render() { 
         const weather = (this.state.info) //assigned value of info to variable
-        console.log(weather)
+        // console.log(weather)
         return (
             <div>
                 <h1 className = "header">8 Day Forecast</h1>
@@ -39,6 +39,11 @@ export default class Weather extends React.Component {
                {
                    weather.map((i => { //iterate over values in state here using map
                   
+                  {/* const dateFormat = (i) => {
+                      let date = new Date(date) {
+
+                      }
+                  } */}
                    
                    //Switch function for daily weather icons
                    const iconSwitch = (i) => {

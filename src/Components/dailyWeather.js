@@ -15,7 +15,7 @@ export default class Weather extends React.Component {
     componentDidMount() {//GET API with Axios
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=33.749001&lon=-84.387978&units=imperial&exclude=current,minutely&appid=${API_KEY}`)
         .then(res => {//Set the state of info results here
-            this.setState({ info: res.data.daily});
+            this.setState({ info: res.data.hourly});
         })
         .catch(error => {
             console.error("error" + error.message);
@@ -23,8 +23,14 @@ export default class Weather extends React.Component {
     }
 
     render() {
+            // const daily = null;
+        console.log(this.state.info)
         return (
-            <div className = "header"> Daily Forecast </div>
+            <div className = "dailyContainer">
+                <div className = "header"> Daily Forecast </div>
+            
+
+            </div>
         )
     }
 }
