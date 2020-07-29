@@ -4,7 +4,8 @@
 
 .dailyWeather {
   list-style: none;
-  border-left: 2px black solid;
+  border: 2px black solid;
+  padding: 10px;
 }
 
 .loTemp {
