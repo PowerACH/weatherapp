@@ -27,24 +27,7 @@ export default class Weather extends React.Component {
             console.error("error" + error.message);
         });
     }
-    
-    // iconSwitch(i) {
-    //     let forecastImage = null;
-    //     switch(i.weather[0].main) {
-    //         case 'Clouds':
-    //             return forecastImage = clouds
-    //         case 'Rain':
-    //             return forecastImage = rain
-    //         case 'Sunny':
-    //             return forecastImage = sunny
-    //         case 'Snow':
-    //             return forecastImage = snow
-    //         default:
-    //             return forecastImage = clouds
-    //     }
-
-    // }
-
+  
     render() { 
         const weather = (this.state.info) //assigned value of info to variable
         // console.log(weather)
