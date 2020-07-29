@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import '../App.css';
+import clouds from './icons/clouds.png';
+import rain from './icons/rain.png';
+import snow from './icons/snow.png';
+import sunny from './icons/sunny.png';
 
 //I secured my unique API key and assigned a value
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -26,7 +30,15 @@ export default class Weather extends React.Component {
     
     iconSwitch(param) {
         switch(param) {
-            case 'sunny':
+            case 'Clouds':
+                return <img src= {clouds} alt="icon"/>
+            case 'Rain':
+                return <img src= {rain} alt="icon"/>
+            case 'Sunny':
+                return <img src= {sunny} alt="icon"/>
+            case 'Snow':
+                return <img src= {snow} alt="icon"/>
+            default:
                 return 
         }
 
