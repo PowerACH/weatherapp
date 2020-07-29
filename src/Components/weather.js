@@ -76,7 +76,7 @@ export default class Weather extends React.Component {
                         <div>
 
                        <li className="dailyWeather">
-                        <img src={iconSwitch(i)} alt="weatherIcon"/>
+                        <img className="icon" src={iconSwitch(i)} alt="weatherIcon"/>
                        <span>{(i.temp.max).toFixed() + "\u00B0"+"F"}</span> <span>  </span> 
                        <span className="loTemp">{(i.temp.min).toFixed() + "\u00B0"+ "F"}</span> 
                        </li>
