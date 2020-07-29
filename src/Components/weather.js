@@ -40,6 +40,7 @@ export default class Weather extends React.Component {
                    weather.map((i => { //iterate over values in state here using map
                    console.log(i.weather[0].main)
                    
+                   //Switch function for daily weather icons
                    const iconSwitch = (i) => {
                         switch(i.weather[0].main) {
                             case 'Clouds':
@@ -60,6 +61,7 @@ export default class Weather extends React.Component {
 
                        <li className="dailyWeather">
                         <img className="icon" src={iconSwitch(i)} alt="weatherIcon"/>
+                        {/* <p>{i.weather[0].description}</p>  */}
                        <span>{(i.temp.max).toFixed() + "\u00B0"+"F"}</span> <span>  </span> 
                        <span className="loTemp">{(i.temp.min).toFixed() + "\u00B0"+ "F"}</span> 
                        </li>
