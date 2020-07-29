@@ -15,7 +15,7 @@ export default class Weather extends React.Component {
     }
 
     componentDidMount() {//GET API with Axios
-        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=33.7490&lon=-84.3880&units=imperial&exclude=current,minutely,hourly&appid=${API_KEY}`)
+        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=33.749001&lon=-84.387978&units=imperial&exclude=current,minutely,hourly&appid=${API_KEY}`)
         .then(res => {//Set the state of info results here
             this.setState({ info: res.data.daily});
         })
@@ -24,9 +24,17 @@ export default class Weather extends React.Component {
         });
     }
     
+    iconSwitch(param) {
+        switch(param) {
+            case 'sunny':
+                return 
+        }
+
+    }
+
     render() { 
         const weather = (this.state.info) //assigned value of info to variable
-        console.log(weather)
+        // console.log(weather)
         return (
             <div>
                 <h1 className = "header">7 Day Forecast</h1>
@@ -34,12 +42,14 @@ export default class Weather extends React.Component {
                 <div className = "container">
                {
                    weather.map((i => { //iterate over values in state here using map
+                   console.log(i.weather[0].main)
+                      
                     return (
                         <div>
 
                        <li className="dailyWeather">
-                       <img />
-                       <span>{(i.temp.max).toFixed() + "\u00B0" + "F"}</span> <span>  </span> 
+                                   <p>{i.weather[0].main}</p>
+                       <span>{(i.temp.max).toFixed() + "\u00B0"+"F"}</span> <span>  </span> 
                        <span className="loTemp">{(i.temp.min).toFixed() + "\u00B0"+ "F"}</span> 
                        </li>
                         </div>
