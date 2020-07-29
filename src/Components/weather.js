@@ -28,21 +28,22 @@ export default class Weather extends React.Component {
         });
     }
     
-    iconSwitch(param) {
-        switch(param) {
-            case 'Clouds':
-                return <img src= {clouds} alt="icon"/>
-            case 'Rain':
-                return <img src= {rain} alt="icon"/>
-            case 'Sunny':
-                return <img src= {sunny} alt="icon"/>
-            case 'Snow':
-                return <img src= {snow} alt="icon"/>
-            default:
-                return 
-        }
+    // iconSwitch(i) {
+    //     let forecastImage = null;
+    //     switch(i.weather[0].main) {
+    //         case 'Clouds':
+    //             return forecastImage = clouds
+    //         case 'Rain':
+    //             return forecastImage = rain
+    //         case 'Sunny':
+    //             return forecastImage = sunny
+    //         case 'Snow':
+    //             return forecastImage = snow
+    //         default:
+    //             return forecastImage = clouds
+    //     }
 
-    }
+    // }
 
     render() { 
         const weather = (this.state.info) //assigned value of info to variable
@@ -55,12 +56,27 @@ export default class Weather extends React.Component {
                {
                    weather.map((i => { //iterate over values in state here using map
                    console.log(i.weather[0].main)
-                      
+                   
+                   const iconSwitch = (i) => {
+                        switch(i.weather[0].main) {
+                            case 'Clouds':
+                                return clouds
+                            case 'Rain':
+                                return rain
+                            case 'Sunny':
+                                return sunny
+                            case 'Snow':
+                                return snow
+                            default:
+                                return clouds
+                        }
+
+                    }
                     return (
                         <div>
 
                        <li className="dailyWeather">
-                                   <p>{i.weather[0].main}</p>
+                        <img src={iconSwitch(i)} alt="weatherIcon"/>
                        <span>{(i.temp.max).toFixed() + "\u00B0"+"F"}</span> <span>  </span> 
                        <span className="loTemp">{(i.temp.min).toFixed() + "\u00B0"+ "F"}</span> 
                        </li>
