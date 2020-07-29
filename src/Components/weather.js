@@ -1,23 +1,40 @@
 import React from 'react';
 import axios from 'axios';
 
-const BASE_API='https://api.openweathermap.org/data/2.5/onecall?lat=33.7490&lon=-84.3880&exclude=daily&appid=6d2b5295767d6217e6db8d1a0669653a'
+
+const API_KEY = process.env.REACT_APP_API_KEY;
+// const BASE_API='https://api.openweathermap.org/data/2.5/onecall?lat=33.7490&lon=-84.3880&exclude=daily&appid='
 
 export default class Weather extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            forecast: []
+            info: []
         }
     }
 
     componentDidMount() {
-        axios.get({BASE_API})
+        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=33.7490&lon=-84.3880&units=imperial&exclude=current,minutely,hourly&appid=${API_KEY}`)
+        .then(res => {
+            this.setState({ info: res.data});
+        })
+        .catch(error => {
+            console.error("error" + error.message);
+        });
     }
 
     render() {
+        const weather = (this.state.info)
+        console.log(weather)
         return (
-            <h1>{this.state.forecast}</h1>
+            <div>
+                <h1 className = "header">7 Day Forecast</h1>
+                <h3> Location: Atlanta, GA </h3>
+                <div className = "container">
+                
+                </div>
+            </div>
+            
         )
     }
 }
