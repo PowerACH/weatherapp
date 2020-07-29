@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import '../app.css';
 
-
+//I secured my unique API key and assigned a value
 const API_KEY = process.env.REACT_APP_API_KEY;
-// const BASE_API='https://api.openweathermap.org/data/2.5/onecall?lat=33.7490&lon=-84.3880&exclude=daily&appid='
+
 
 export default class Weather extends React.Component {
     constructor(props) {
@@ -13,9 +14,9 @@ export default class Weather extends React.Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount() {//GET API with Axios
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=33.7490&lon=-84.3880&units=imperial&exclude=current,minutely,hourly&appid=${API_KEY}`)
-        .then(res => {
+        .then(res => {//Set the state of info results here
             this.setState({ info: res.data.daily});
         })
         .catch(error => {
@@ -23,8 +24,8 @@ export default class Weather extends React.Component {
         });
     }
     
-    render() {
-        const weather = (this.state.info)
+    render() { 
+        const weather = (this.state.info) //assigned value of info to variable
         console.log(weather)
         return (
             <div>
@@ -32,7 +33,7 @@ export default class Weather extends React.Component {
                 <h3> Location: Atlanta, GA </h3>
                 <div className = "container">
                {
-                   weather.map((i => {
+                   weather.map((i => { //iterate over values in state here using map
                     return (
                         <div>
 
