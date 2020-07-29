@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom'
+import Weather from './Components/weather'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
-  );
+    <BrowserRouter>
+      <div className = "App">
+        <Route exact path="/" component={Weather} /> 
+      </div>
+    </BrowserRouter>
+  )
 }
-
-export default App;
