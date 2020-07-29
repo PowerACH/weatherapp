@@ -27,3 +27,4 @@ export default class Weather extends React.Component {
             <div className = "header"> Daily Forecast </div>
         )
     }
+}
