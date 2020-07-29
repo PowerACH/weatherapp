@@ -7,7 +7,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className = "App">
-        <Route exact path="/" component={Weather} /> 
+        <Route exact path="/" component={Weather} />
+        {/* <Route path = ""  */}
       </div>
     </BrowserRouter>
   )
