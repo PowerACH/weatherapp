@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import '../app.css';
+import '../App.css';
 
 //I secured my unique API key and assigned a value
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -37,7 +37,11 @@ export default class Weather extends React.Component {
                     return (
                         <div>
 
-                       <li className="dailyWeather" key={i}>Hi: {i.temp.max} | Lo: {i.temp.min} </li>
+                       <li className="dailyWeather">
+                       <img />
+                       <span>{(i.temp.max).toFixed() + "\u00B0" + "F"}</span> <span>  </span> 
+                       <span className="loTemp">{(i.temp.min).toFixed() + "\u00B0"+ "F"}</span> 
+                       </li>
                         </div>
                    )}))
                }
