@@ -23,7 +23,15 @@
 }
 
 .dailyContainer{
-  margin-top: 20%;
+  margin-top: 5%;
+}
+
+.header {
+  font-size: 50px;
+}
+
+.header2 {
+  font-size: 30px;
 }
 
 /* * {
