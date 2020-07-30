@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 //I secured my unique API key and assigned a value
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -31,7 +32,7 @@ export default class Weather extends React.Component {
         return (
             <div>
                 <h1 className = "header">8 Day Forecast</h1>
-                <h3> Location: Atlanta, GA </h3>
+                <h3 className = "header2"> Location: Atlanta, GA </h3>
                 <div className = "container">
                {
                    weather.map((i => { //iterate over values in state here using map
@@ -47,11 +48,10 @@ export default class Weather extends React.Component {
                         <div className = "dailyContainer">
                         {/* <Link to = {``} */}
                        <li className="dailyWeather">
-                       <p></p>
                         <img className="icon" src= {icon} />
-                         {/* eslint-disable-next-line */}
+                                {/* eslint-disable-next-line */}
                        <span>{(i.temp.max).toFixed() + "\u00B0"+"F"}</span> <span>  </span> 
-                         {/* eslint-disable-next-line */}
+                                {/* eslint-disable-next-line */}
                          <span className="loTemp">{(i.temp.min).toFixed() + "\u00B0"+ "F"}</span> 
                        </li>
                         </div>
