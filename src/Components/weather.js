@@ -1,13 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import '../App.css';
-import clouds from './assets/clouds.png';
-import rain from './assets/rain.png';
-import snow from './assets/snow.png';
-import sunny from './assets/sunny.png';
 
 //I secured my unique API key and assigned a value
 const API_KEY = process.env.REACT_APP_API_KEY;
+
 
 
 export default class Weather extends React.Component {
@@ -38,34 +35,19 @@ export default class Weather extends React.Component {
                 <div className = "container">
                {
                    weather.map((i => { //iterate over values in state here using map
+                {/* console.log(i.dt) */}
+                   let date = new Date(i.dt)
+                   const options ={weekday: 'long'}
+                   {/* console.log(i.weather[0].icon) */}
+
+                   const icon = ('http://openweathermap.org/img/wn/' + i.weather[0].icon + '@2x.png')
                   
-                  {/* const dateFormat = (i) => {
-                      let date = new Date(date) {
-
-                      }
-                  } */}
-                   
-                   //Switch function for daily weather icons
-                   const iconSwitch = (i) => {
-                        switch(i.weather[0].main) {
-                            case 'Clouds':
-                                return clouds
-                            case 'Rain':
-                                return rain
-                            case 'Sunny':
-                                return sunny
-                            case 'Snow':
-                                return snow
-                            default:
-                                return clouds
-                        }
-
-                    }
                     return (
-                        <div>
+                        <div className = "dailyContainer">
                         {/* <Link to = {``} */}
                        <li className="dailyWeather">
-                        <img className="icon" src={iconSwitch(i)} alt="weatherIcon"/>
+                       <p></p>
+                        <img className="icon" src= {icon} />
                          {/* eslint-disable-next-line */}
                        <span>{(i.temp.max).toFixed() + "\u00B0"+"F"}</span> <span>  </span> 
                          {/* eslint-disable-next-line */}

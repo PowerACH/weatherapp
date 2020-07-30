@@ -6,6 +6,7 @@
   list-style: none;
   border: 2px black solid;
   margin: 10px;
+  margin-top: ;
 }
 
 .loTemp {
@@ -20,3 +21,13 @@
 .icon {
   width: 100px;
 }
+
+.dailyContainer{
+  margin-top: 20%;
+}
+
+/* * {
+  background-image: url(https://images.pexels.com/photos/296234/pexels-photo-296234.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+  background-size: 100%;
+  background-color: transparent;
+} */
