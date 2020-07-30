@@ -4,3 +4,6 @@ Weather App
 
 ### Display a 7-day weather forecast, where each day shows the high and low temperatures, and an image for sunny/rainy/cloudy/snowy. 
 
+## WireFrame
+
+![](./src/Components/assets/wireframe1.png)
