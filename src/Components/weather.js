@@ -39,7 +39,8 @@ export default class Weather extends React.Component {
                    let date = new Date(i.dt)
                    const options ={weekday: 'long'}
                    {/* console.log(i.weather[0].icon) */}
-
+                    
+                    //link for weather icon
                    const icon = ('http://openweathermap.org/img/wn/' + i.weather[0].icon + '@2x.png')
                   
                     return (
